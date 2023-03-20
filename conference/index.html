@@ -1,0 +1,701 @@
+<html>
+<meta charset="utf-8">
+
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Two+Tone" rel="stylesheet">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+
+    
+    <style>
+        body{
+            --sw: min(100vw, calc(1100px - 40px))!important;
+        }
+        .read-more{
+            display: none!important;
+        }
+        .to-be-expanded{
+                line-height: 1.8
+            }
+        @media only screen and (max-width: 800px) {
+            .to-be-expanded {
+                max-height: 320px;
+                overflow: hidden;
+                transition: ease 0.5s;
+                position: relative;
+            }
+            .read-more{
+                display: flex!important;
+            }
+
+            .expand {
+                max-height: 1000px;
+            }
+
+            .to-be-expanded{
+                line-height: 1.5
+            }
+
+            .to-be-expanded.expand+.read-more .button-more {
+                display: none;
+            }
+
+            .to-be-expanded:not(.expand)+.read-more .button-less {
+                display: none;
+            }
+
+            .to-be-expanded::after {
+                content: '';
+                width: 100%;
+                height: 320px;
+                position: absolute;
+                left: 0;
+                top: 0;
+                background-color: transparent;
+                transition: 0.5s ease;
+                transition-delay: 1s;
+            }
+
+            .to-be-expanded:not(.expand)::after {
+                background: linear-gradient(transparent 200px, rgb(202, 198, 195));
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <title>Conference Info</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <style>
+        .display .title,
+        .display .content {
+            float: none !important;
+            width: 100%;
+        }
+
+        .display .title {
+            height: 120px !important
+        }
+
+        .display,
+        .display .content {
+            height: auto !important;
+        }
+
+        .content .inner-space {
+            height: fit-content !important
+        }
+
+
+        .learn-more {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outer-wrapper">
+        <div class="banner">
+            <div style="" class="menu-icon">
+                <span class="material-icons-two-tone">menu</span>
+                <span class="material-icons-two-tone">close</span>
+            </div>
+
+
+            <div class="giant-text">NEMUN</div>
+            <div style="font-style: italic;">Held on May 20 - 21, 2023</div>
+            <div class="menu">
+
+                <a href="../">
+                    <div class="link" style="display:flex; align-items: center;">Home
+                    </div>
+                </a>
+                <a>
+                    <div class="link thisPage" style="display:flex; align-items: center;">Conference
+                    </div>
+                </a>
+
+                <a href="../about">
+                    <div class="link " style="display:flex; align-items: center;">About
+                    </div>
+                </a>
+                <a href="../registration">
+                    <div class="link" style="display:flex; align-items: center;">Registration
+                    </div>
+                </a>
+                <a href="../contact">
+                    <div class="link" style="display:flex; align-items: center;">Contact
+                    </div>
+                </a>
+            </div>
+
+
+
+
+
+
+        </div>
+        <div class="wrapper">
+
+            <div class="group display">
+                <div class="title">
+                    <div class="inner-space">
+                        <span class="title-text">Theme</span>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="inner-space ca" style="gap: 20px; padding-left: 80px; padding-right: 80px">
+                        <div style="font-size: 28px; align-self: flex-start;" class="a">
+                            Resilience in Society: Addressing Disaster Risk Reduction through Sustainable Framework
+                            Development
+                        </div>
+
+                        <div style="display: flex;flex-direction: column;gap: 12px;"
+                            class="to-be-expanded">
+                            <div>
+                                "Disaster risk reduction is the concept and practice of reducing disaster risks through
+                                systematic efforts to analyze and reduce the causal factors of disasters."
+                            </div>
+
+                            <div>
+                                Throughout the past few years, the international community has faced many disasters:
+                                natural disasters brought on by climate change, the COVID pandemic, and more conflicts
+                                that are results of human actions. The global society is susceptible to disruption at
+                                any moment. Even though the pandemic and other disasters may be quietly fading away, it
+                                is certain that the immense damage it has caused to global agendas such as the
+                                Sustainable Development Goals and the Paris Agreement will remain for quite some time to
+                                come. This further reinforced the necessity of resilience in the face of such disasters.
+                            </div>
+
+                            <div>
+                                A Disaster Risk Reduction plan like the Sendai Framework provided tangible actions not
+                                only to curb losses, but also to ensure our development for the future. It is imperative
+                                that key actors such as strengthening disaster risk governance, building capacity,
+                                establishing research institutions, sharing information, and providing policy advice
+                                play a major role in preventing systematic risk and promoting resilience within society.
+                                Our goal is to build resilience rather than passively react to unpredictable disasters
+                                by establishing durable and sustainable frameworks in areas such as education,
+                                humanitarian assistance and more.
+                            </div>
+
+
+                        </div>
+
+                        <div style="display: flex; align-items: center; font-style: normal;text-transform: none;"
+                            class="link read-more">
+                            Read more
+                            <span class="material-icons-two-tone button-more"
+                                style="font-size: 20px; margin-left: 4px">expand_more</span>
+                            <span class="material-icons-two-tone button-less"
+                                style="font-size: 20px; margin-left: 4px">expand_less</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="group display">
+                <div class="title">
+                    <div class="inner-space">
+                        <span class="title-text">Committees</span>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="inner-space committee-grid" style="padding: 25px 30px;min-height: 400px;">
+
+                        <div class="container" style="flex-direction: row;align-items: space-around;">
+                            <span class="c-item">
+
+                                <span class="material-icons-two-tone c-icon">
+                                    handshake
+                                </span>
+                                <div class="c-title">
+                                    GA1
+                                </div>
+                                <div class="c-caption">General Assembly <br>First Committee</div>
+                            </span>
+                            <span class="c-item">
+                                <span class="material-icons-two-tone c-icon">
+                                    work
+                                </span>
+                                <div class="c-title">
+                                    WTO
+                                </div>
+                                <div class="c-caption">
+                                    World Trade <br>Organization
+                                </div>
+                            </span>
+                            <span class="c-item">
+                                <span class="material-icons-two-tone c-icon">
+                                    timeline
+                                </span>
+                                <div class="c-title">
+                                    UNDP
+                                </div>
+                                <div class="c-caption">
+                                    Development <br>Programme
+                                </div>
+
+                            </span>
+                            <span class="c-item">
+                                <span class="material-icons-two-tone c-icon">
+                                    shield
+                                </span>
+                                <div class="c-title">
+                                    UNSC
+                                </div>
+                                <div class="c-caption">
+                                    Security<br> Council
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="group display">
+                <div class="title">
+                    <div class="inner-space">
+                        <span class="title-text">GA1</span>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="inner-space ca"
+                        style="gap: 20px; padding-left: 60px; padding-right: 80px;align-items: flex-start;">
+                        <div style="font-size: 28px; align-self: flex-start;" class="a">
+                            Head Chair: Victor Kang
+                        </div>
+                        <div>Issue (101): Discerning the balance between nuclear energy proliferation and nuclear
+                            weaponization</div>
+
+                        <div style="display: flex;flex-direction: column;gap: 12px;"
+                            class="to-be-expanded">
+                            <div>
+                                Nuclear energy, though not renewable, is much more sustainable than other forms of
+                                energy proliferation, such as the burning of fossil fuels. This is because a large
+                                majority of the materials used in this proliferation are recyclable, with up to 96% of
+                                it being reusable. This makes it a preferable alternative for LEDCs, as though the
+                                plants are expensive to construct, they're relatively inexpensive to run. Therefore,
+                                nuclear energy has high potential as the primary energy source for underdeveloped
+                                countries.
+                            </div>
+                            <div>However, the harnessing of nuclear energy itself accompanies a much higher risk:
+                                nuclear weaponization. There have been extensive international issues centered around
+                                the ambiguous balance between nuclear energy development and nuke production, such as
+                                the Iran Nuclear Act and the US's withdrawal from the pact. Now, many countries use
+                                nuclear weapons to hold a strategic advantage and deterrence over other nations.
+                            </div>
+                            <div>The issue spans over virtually every country because member states are either concerned
+                                about energy usage or weaponization.</div>
+                        </div>
+                        <div style="display: flex; align-items: center; font-style: normal;text-transform: none; align-self: center; margin: -10px 0 10px;"
+                            class="link read-more">
+                            Read more
+                            <span class="material-icons-two-tone button-more"
+                                style="font-size: 20px; margin-left: 4px">expand_more</span>
+                            <span class="material-icons-two-tone button-less"
+                                style="font-size: 20px; margin-left: 4px">expand_less</span>
+                        </div>
+                        <div style="font-size: 28px; align-self: flex-start;" class="a">
+                            Co-Chair: Shannon Yen
+                        </div>
+                        <div>Issue (102): Preventing illicit weapons from being distributed to non-state actors causing
+                            terrorism
+                        </div>
+
+                        <div style="display: flex;flex-direction: column;gap: 12px;"
+                            class="to-be-expanded">
+
+                            <div>
+                                In a world of rising conflicts and political turmoil, the trafficking of illicit
+                                weapons, often known as “arms trafficking,” are causes of mass destruction against
+                                others, and have been of great concern to member states around the world. The question
+                                is: How will these illicit weapons be detected, and if so, how can actions be taken to
+                                ensure that they do not land in the wrong hands? Delegates should appropriately consider
+                                the reasons behind why these illicit weapons are even able to land in the hands of
+                                terrorists in the first place.
+                            </div>
+                            <div>Governmental entities, as well as other organizations, such as private arms dealers,
+                                who have the funds and means to transport these illicit weapons, take great measures to
+                                cover their actions against the possibility of rebuke by the global community.
+                                Therefore, the issue at hand will be somewhat challenging in the realm of determining
+                                what regulations and preventative measures will truly solve the issue at hand, given the
+                                dominance of Western-made weapons in the arms trafficking scene but the common
+                                prevalence of these weapons in areas of high terrorist activity, such as in areas of
+                                Africa where governmental control is lacking. To summarize, combating illicit weapons is
+                                a tricky topic, one where sneakiness is common and circumvention is key.</div>
+                        </div>
+                        <div style="display: flex; align-items: center; font-style: normal;text-transform: none; align-self: center; margin: -10px 0 10px;"
+                            class="link read-more">
+                            Read more
+                            <span class="material-icons-two-tone button-more"
+                                style="font-size: 20px; margin-left: 4px">expand_more</span>
+                            <span class="material-icons-two-tone button-less"
+                                style="font-size: 20px; margin-left: 4px">expand_less</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="group display">
+                <div class="title">
+                    <div class="inner-space">
+                        <span class="title-text">WTO</span>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="inner-space ca"
+                        style="gap: 20px; padding-left: 60px; padding-right: 80px;align-items: flex-start;">
+                        <div style="font-size: 28px; align-self: flex-start;" class="a">
+                            Head Chair: Melvin Huang
+                        </div>
+                        <div>Issue (201): Promotion of Resilient Framework for Equitable and Accessible Food
+                            Distribution</div>
+
+                        <div style="display: flex;flex-direction: column;gap: 12px;"
+                            class="to-be-expanded">
+                            <div>
+                                Amid the crises that arose in the pandemic era, food insecurity amounted to one of the
+                                most imperative issues to be addressed worldwide. The breakdown of the global supply
+                                chain, significant diminution of agricultural production export in Ukraine, rising crude
+                                oil prices, abnormal climate events, and increasingly prevalent civil unrest all
+                                culminate in the uneven distribution of sustenance as well as unaffordable food prices,
+                                which in turn leads to record high malnutrition and famine across continents.
+                                Consequently, while the World Trade Organization held its 12th Ministerial Conference in
+                                June 2022, high-level ministers of member states delivered two substantive outcomes
+                                thereof: World Food Programme exemption from export restriction as well as the
+                                Declaration on the Emergency Response to Food Insecurity, which purported to “ensure
+                                that any emergence measures introduced to address food security concerns shall minimize
+                                trade distortions as far as possible”. But were those sufficient? More and more member
+                                states are calling for not only mere promises and emergency aid but also long-term
+                                institutions for resolving future food insecurity issues. Thus, therein lies the core
+                                question: Is there a way to build a long-term framework to maintain food security? And
+                                if so, how?
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; font-style: normal;text-transform: none; align-self: center; margin: -10px 0 10px;"
+                            class="link read-more">
+                            Read more
+                            <span class="material-icons-two-tone button-more"
+                                style="font-size: 20px; margin-left: 4px">expand_more</span>
+                            <span class="material-icons-two-tone button-less"
+                                style="font-size: 20px; margin-left: 4px">expand_less</span>
+                        </div>
+                        <div style="font-size: 28px; align-self: flex-start;" class="a">
+                            Co-Chair: Judy Li
+                        </div>
+                        <div>Issue (202): Facilitating Trade in Medical Goods in the Context of Covid-19
+                        </div>
+
+                        <div style="display: flex;flex-direction: column;gap: 12px;"
+                            class="to-be-expanded">
+
+                            <div>
+                                The COVID-19 pandemic has had a significant impact on the global economy and
+                                international trade, bringing unprecedented disruptions to people's lives. The pandemic
+                                led to rising demand for medical goods trading, such as vaccines, face masks, and other
+                                critical pandemic products. Despite the decline in global trade, the market for medical
+                                goods registered an average growth rate of more than 14% from 2020 and 2021.
+                            </div>
+                            <div>However, there are also several issues relevant to the global trade of medical
+                                supplies. For instance, insufficient supply of medical products has caused unequal
+                                distribution and increased prices. Export restrictions were posed, delaying essential
+                                transactions of critical medical products and further exacerbating supply insecurity. In
+                                particular, driven by overwhelming demands and inadequate supply, the prices of face
+                                masks were raised to an exorbitantly high level. Furthermore, the world is primarily
+                                dependent on certain countries to provide critical pandemic products, resulting in
+                                limited participation of underdeveloped countries and possible infringements by more
+                                dominant countries upon their economy and politics. Thus, the unequal distribution of
+                                medical goods aggravated the difficulties of the economy while also obstructing the
+                                recovery of underdeveloped countries from the pandemic. The WTO has since urged
+                                countries to roll back export restrictions and put trade-facilitating measures in place.
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; font-style: normal;text-transform: none; align-self: center; margin: -10px 0 10px;"
+                            class="link read-more">
+                            Read more
+                            <span class="material-icons-two-tone button-more"
+                                style="font-size: 20px; margin-left: 4px">expand_more</span>
+                            <span class="material-icons-two-tone button-less"
+                                style="font-size: 20px; margin-left: 4px">expand_less</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="group display">
+                <div class="title">
+                    <div class="inner-space">
+                        <span class="title-text">UNDP</span>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="inner-space ca"
+                        style="gap: 20px; padding-left: 60px; padding-right: 80px;align-items: flex-start;">
+                        <div style="font-size: 28px; align-self: flex-start;" class="a">
+                            President: Enzo Hsu
+                        </div>
+                        <div>Issue (301): Preserving diversity in domestic industries amidst foreign corporate monopoly
+                        </div>
+
+                        <div style="display: flex;flex-direction: column;gap: 12px;"
+                            class="to-be-expanded">
+                            <div>
+                                As globalization continues to fuel economic expansion in developed and developing
+                                countries, the predominantly laissez-faire trading system led to the rise of certain
+                                global industry mongrels that monopolize markets and depower small businesses of local
+                                origins. Though most governments have innate protection mechanisms to avoid total
+                                reliance on foreign businesses, the lack of sufficient regulations on international
+                                trade organization and even profiting countries themselves has sustained a creeping of
+                                neoimperialism in exploited countries.
+                            </div>
+
+                            <div>
+                                With the 10th Sustainable Development Goals named "Reduced Inequalities," it's often
+                                that campaigns focus on income and social recognition as the main targets of the issue.
+                                Yet in view of these goals being "sustainable" for development, countries must also
+                                allocate resources in ensuring equality to wage business to help people maintain their
+                                own living. While this issue got some spotlight in chapter 3 of UNDP's 2021 Regional
+                                Human Development Report for Latin America and the Caribbean, the phenomenon of foreign
+                                monopoly persists in many other regions of the world. Aside from the common methods of
+                                tariffs and per-unit taxation, there must also be efforts on promoting domestic
+                                businesses to level the playing field in a market economy. Member states ought to devise
+                                policies balanced between freedom of privatization and freedom to compete.
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; font-style: normal;text-transform: none; align-self: center; margin: -10px 0 10px;"
+                            class="link read-more">
+                            Read more
+                            <span class="material-icons-two-tone button-more"
+                                style="font-size: 20px; margin-left: 4px">expand_more</span>
+                            <span class="material-icons-two-tone button-less"
+                                style="font-size: 20px; margin-left: 4px">expand_less</span>
+                        </div>
+                        <div style="font-size: 28px; align-self: flex-start;" class="a">
+                            Deputy President: Lucas Lin
+                        </div>
+                        <div>Issue (302): Enhancing Household Resilience to Poverty and Vulnerability in Developing
+                            Countries
+                        </div>
+
+                        <div style="display: flex;flex-direction: column;gap: 12px;"
+                            class="to-be-expanded">
+
+                            <div>
+                                The outbreak of the Covid-19 pandemic has permanently increased poverty vulnerability
+                                among households in developing countries, undoing a decade of UN efforts toward poverty
+                                reduction. The notion of vulnerability includes efforts of households to cope with
+                                fluctuations and shocks, as well as means to reduce risks of falling into poverty. These
+                                idiosyncratic shocks ranging from health emergencies, social hardships, rising costs of
+                                foodstuff and living needs require policy concern from national governments as well as
+                                through the UNDP disaster risk reduction framework to enhance preparedness and
+                                resilience. Members of poor households are more vulnerable to illness and financially
+                                incapable of affording medical attention while others may suffer from job and income
+                                loss and fail to support their families and communities. Countries such as Cambodia, El
+                                Salvador, and South Africa have endured the socioeconomic disruptions caused by the
+                                pandemic, meaning that safety nets, poverty alleviation programs, and financial
+                                inclusion need to be strengthened to support poverty-stricken households to cope with
+                                risks. Vulnerability and poverty is a multidimensional issue that considers health,
+                                education, nutrition, and standard of living beyond just the measurement of income. By
+                                assessing vulnerability through UNDP's multidimensional vulnerability indices (MVIs),
+                                both the public and private sector can inform policy alternatives through a more
+                                inclusive framework that addresses the impacts of health uncertainties, social strife
+                                and poor infrastructure in tackling global poverty.
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; font-style: normal;text-transform: none; align-self: center; margin: -10px 0 10px;"
+                            class="link read-more">
+                            Read more
+                            <span class="material-icons-two-tone button-more"
+                                style="font-size: 20px; margin-left: 4px">expand_more</span>
+                            <span class="material-icons-two-tone button-less"
+                                style="font-size: 20px; margin-left: 4px">expand_less</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="group display">
+                <div class="title">
+                    <div class="inner-space">
+                        <span class="title-text">UNSC</span>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="inner-space ca"
+                        style="gap: 20px; padding-left: 60px; padding-right: 80px;align-items: flex-start;">
+                        <div style="font-size: 28px; align-self: flex-start;" class="a">
+                            President: Warren Wang
+                        </div>
+                        <div>Issue (401): Sino-Indian Border Dispute</div>
+
+                        <div style="display: flex;flex-direction: column;gap: 12px;"
+                            class="to-be-expanded">
+
+                            <div>
+                                China and India's border dispute is renownedly agitated in Arunachal Pradesh amidst a
+                                stretch of over 3,440 kilometers. A region to the northeast of India, Arunachal
+                                Pradesh's state annexation in 1987 and Indian leaders' proceeding visits had long irked
+                                China. Fatal conflicts involving sticks since June 2020 - eventually gunshots in
+                                December 2022 - escalated the unrest despite how a 1996 agreement prohibited firearms in
+                                the region. Although both sides disengaged, tension accumulated as they scrambled to
+                                build infrastructure along the border.
+                            </div>
+
+                            <div>
+                                This conflict holds implications in the environmental sphere. The Himalayan plateau's
+                                monsoonal rains and seasonal ice-melts fed rivers to South, Southeast and East Asia;
+                                however, toxic leaks from both nuclear powers' mines and agricultural developments loom
+                                over the water source. Construction of roads and hospitals that induce deforestation can
+                                also compromise the Himalayas' third-largest biodiversity hotspot. On the humanitarian
+                                side, water supplies regulated by hydroelectric plants and dams threaten the livelihood
+                                of up to 630 million people, with Tibetans and other minorities calling for autonomy
+                                between the two parties' intensifying grip.
+                            </div>
+                            <div>Overall, dynamic politics complicate the environmental and humanitarian issues, with
+                                both the Chinese and Indian government seeking allies that may result in further
+                                stalemates and prolong the dispute.</div>
+                        </div>
+                        <div style="display: flex; align-items: center; font-style: normal;text-transform: none; align-self: center; margin: -10px 0 10px;"
+                            class="link read-more">
+                            Read more
+                            <span class="material-icons-two-tone button-more"
+                                style="font-size: 20px; margin-left: 4px">expand_more</span>
+                            <span class="material-icons-two-tone button-less"
+                                style="font-size: 20px; margin-left: 4px">expand_less</span>
+                        </div>
+                        <div style="font-size: 28px; align-self: flex-start" class="a">
+                            Deputy President: Kingston Yu
+                        </div>
+                        <div>Issue (402): Responses to the Insurgency in the Maghreb
+                        </div>
+
+                        <div style="display: flex;flex-direction: column;gap: 12px;"
+                            class="to-be-expanded">
+
+                            <div>
+                                The Insurgency in the Maghreb refers to the violent clash between governments in the
+                                Maghreb-Sahel region in Africa and the Islamic militants that started since the Algerian
+                                Civil War in 2002. Such violent groups include Al-Qaeda and the Islamic State (ISIL).
+                            </div>
+
+                            <div>
+                                The fact that extremist beliefs continue to define and characterize the wave of
+                                insurgencies that has plagued the Maghreb Sahel region for so long raises some troubling
+                                considerations. After violent jihadists brought Algeria's insurgency in the 1990s into
+                                infamy, people expect that dissident rebels would stop adopting extreme ideology since
+                                it alienates the majority of local communities, fragments the ranks of rebels, and
+                                scares away outside supporters. Seeing such risks, it is perplexing why Salafi jihadism
+                                continues to be the insurgent repertoire in the Maghreb-Sahel region. What's more
+                                puzzling is that this radical ideology has evolved into the ideal weapon of war and the
+                                ideological hub that unites the support of various types of oppressed communities.
+                                Salafi jihadism aided Sahel rebels to survive, recruit, and outcompete other contesting
+                                armed players. As such, it is of great importance to the Security Council in resolving
+                                the bloodshed and restoring peace and order to the region.
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; font-style: normal;text-transform: none; align-self: center; margin: -10px 0 10px;"
+                            class="link read-more">
+                            Read more
+                            <span class="material-icons-two-tone button-more"
+                                style="font-size: 20px; margin-left: 4px">expand_more</span>
+                            <span class="material-icons-two-tone button-less"
+                                style="font-size: 20px; margin-left: 4px">expand_less</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="footer" style="margin-top: 40px">
+                <div>
+                    <div>Venue: National Experimental High School at Hsinchu Science Park</div>
+                </div>
+                <div>
+                    <div>Email: nemun2023@gmail.com</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+    </div>
+    <div class="popup-parent hide">
+        <div class="popup" style="max-width: 600px">
+            <div class="x">
+                <span class="material-icons-two-tone icon">
+                    close
+                </span>
+            </div>
+            <div class="container"
+                style="gap: 20px;padding: 20px;justify-content: flex-start;align-items: flex-start;padding-left: 60px;">
+                <div class="p-item">
+                    <span class="material-icons-two-tone icon">
+                        timer
+                    </span>
+
+                    <div>
+                        <a href="https://forms.gle/nfNgaU7ZHBrZc1Cb6"
+                            style="width: 100%;display: flex;flex-direction:column;gap:10px;align-items: flex-start;">
+
+                            <div class="link" style="font-size: 24px; display: flex;align-items: center;">
+                                <span>Final Registration</span>
+
+                                <span class="material-icons-two-tone" style=" font-size: 20px;">arrow_forward_ios</span>
+                            </div>
+
+
+                            <div>Ends on March 10th</div>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting)
+                    setTimeout(() => entry.target.classList.add("show"), 100);
+                //else
+                //entry.target.classList.remove("show")
+            })
+        })
+        const groups = document.querySelectorAll(".title, .content")
+        groups.forEach(a => a.classList.add("hide"))
+        groups.forEach(a => observer.observe(a))
+
+        /*const popup = document.querySelector('.popup-parent')
+        const register = document.querySelectorAll('.register .link')
+        register.forEach(el => el.onclick = () => {
+
+            popup.classList.toggle("show-2")
+            popup.classList.toggle("show")
+        })*/
+
+        const x = document.querySelectorAll(".x")
+        x.forEach(a => {
+            a.onclick = ({ target }) => {
+                while (!target.classList.contains("popup-parent")) {
+                    target = target.parentElement
+                }
+                target.classList.remove("show");
+                setTimeout(() => target.classList.remove("show-2"), 500)
+            }
+        })
+
+        document.querySelector(".menu-icon").onclick = function () {
+            document.querySelector(".outer-wrapper").classList.toggle("reveal-menu")
+        }
+
+        document.querySelectorAll(".read-more").forEach(a => {
+            a.onclick = function (b) {
+                a.previousElementSibling.classList.toggle('expand')
+            }
+        })
+    </script>
+</body>
+
+</html>

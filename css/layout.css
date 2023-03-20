@@ -1,0 +1,282 @@
+/*
+    Key components: group, title, content, wrapper
+
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&display=swap');
+
+
+body {
+    margin: 0;
+    --sw: min(100vw, calc(900px - 40px));
+    position: relative;
+    overflow-x: hidden;
+    z-index: 0;
+    width: 100vw;
+    font-family: 'Baskervville', 'Baskervville', 'Times New Roman', Times, serif!important;
+}
+
+html{
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+.menu{
+    bottom: 10px;
+    position: absolute;
+}
+.inverted .title {
+    float: right
+}
+
+.inverted .content {
+    float: left
+}
+
+.group {
+    position: relative;
+    height: calc(0.5 * var(--sw));
+    margin-top: 40px;
+    clip-path: polygon(0 16.00px, 16.00px 0, calc(100% - 16.00px) 0, 100% 16.00px, 100% calc(100% - 16.00px), calc(100% - 16.00px) 100%, 16.00px 100%, 0 calc(100% - 16.00px));
+}
+
+.title,
+.content {
+    width: calc(0.5 * var(--sw));
+    height: calc(0.5 * var(--sw));
+    display: inline-block;
+    overflow: hidden;
+}
+
+.inner-space {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+
+.title {
+    float: left;
+    transition: opacity ease 0.5s;
+}
+
+
+
+.title .inner-space::after {
+    background-image: url("../banner.jpg");
+    background-size: 500px;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    filter: grayscale(0.8) brightness(1.2);
+}
+
+.content .inner-space {
+    background-color: rgb(202, 198, 195);
+    padding: 40px
+}
+
+.content {
+    float: right;
+    transition: opacity ease 0.5s;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    gap: 5vw;
+    justify-content: center;
+    color: #bbb;
+    font-size: 16px;
+
+}
+
+.display .title {
+    height: 100px !important
+}
+
+.banner {
+    height: 200px;
+    font-weight: 500;
+    color: rgb(240, 221, 195);
+    height: 200px;
+    width: 100%;
+    justify-content: flex-start;
+    padding-top: 40px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    background-image: url("../banner.jpg");
+    background-size: 500px;
+    gap: 10px;
+    position: relative;
+}
+
+.wrapper {
+    width: calc(var(--sw));
+    margin: 0 auto;
+}
+
+.menu-icon{
+    font-style: normal;margin:0 auto; position: absolute; left: 30px;transition: left 0.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.outer-wrapper {
+    width: 100%;
+    transition: margin 0.5s ease;
+     
+}
+
+.menu-icon {
+    display: none;
+}
+
+.reveal-menu .group,
+.reveal-menu .register {
+
+    filter: brightness(0.2);
+}
+
+.group, .register{
+    transition: filter 0.2s ease;
+}
+
+.reveal-menu .menu-icon span:first-child{
+    opacity: 0;
+    width: 0;
+}
+
+.menu-icon span:last-child{
+    opacity: 0;
+    width: 0;
+}
+
+.reveal-menu .menu-icon span:last-child{
+    opacity: 1;
+    width: auto;
+}
+
+.menu-icon span{
+    transition: opacity 0.5s ease;
+    overflow: hidden;
+}
+
+
+.reveal-menu {
+    margin-left: 180px;
+}
+
+.outer-menu {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    font-size: 20px;
+    justify-content: center;
+    width: 100%;
+}
+
+
+
+@media only screen and (max-width: 800px) {
+
+    .menu-icon {
+        display: flex;
+    }
+
+    .title,
+    .content {
+        float: none !important;
+        width: calc(1 * var(--sw));
+        height: calc(1 * var(--sw));
+        display: block;
+    }
+
+
+
+    .outer-menu {
+        width: 295.83px;
+        flex-direction: column;
+        align-items: flex-start;
+
+    }
+
+    .group {
+        height: auto;
+        margin-top: 0;
+        clip-path: none;
+    }
+
+
+
+    .title {
+        max-height: 110px;
+    }
+
+    @media only screen and (min-width: 500px) {
+        .content {
+            height: calc(0.8 * var(--sw))
+        }
+
+    }
+
+    .menu {
+        position: fixed;
+        flex-direction: column !important;
+        top: 0;
+        z-index: -1;
+        left: -0px;
+        width: 180px;
+        align-items: center;
+        gap: 20px;
+        color: #ddd;
+        opacity: 0;
+        transition: opacity 0.5s ease;;
+
+    }
+
+    .reveal-menu .menu{
+        opacity: 1;
+    }
+    .banner{
+        justify-content: center;
+        padding-top: 0;
+    }
+}
+
+.link::after, .thisPage::after {
+    position: absolute;
+    content: '';
+    transition: ease 0.4s;
+    width: 100%;
+    height: 2px;
+    background-color: transparent;
+    top: 100%
+
+}
+
+.outer-wrapper:not(.reveal-menu) .menu .link::after, .outer-wrapper:not(.reveal-menu) .menu .thisPage::after{
+    top: calc(100% + 10px);
+    width: calc(100% + 20px);
+}
+
+.link {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+}
+
+.link:hover::after, .thisPage::after {
+    background-color: currentColor!important;
+}
+

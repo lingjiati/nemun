@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Two+Tone"
+      rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+
+    <style>
+
+    </style>
+    <title>NEMUN 2023</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./css/layout.css">
+    <link rel="stylesheet" href="./css/global.css">
+    <style>
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+
+        .x {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+
+        }
+
+        .x span {
+            font-size: 24px !important;
+            padding: 0 !important;
+        }
+
+
+        body::after {
+            content: '';
+            background-image: url("./banner.jpg");
+            background-size: 500px;
+            font-family: 'Baskerville', 'Times New Roman', Times, serif;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            z-index: -2;
+            filter: brightness(0.5);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+
+
+
+
+
+        .giant-text {
+
+            font-size: 60px;
+            margin: -5px 0;
+        }
+
+
+
+        .item {
+            transition: color 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+
+        .item:hover {
+            color: #ddd
+        }
+
+        .icon {
+            font-size: 48px !important;
+            clip-path: polygon(0 12px, 12px 0, calc(100% - 12px) 0, 100% 12px, 100% calc(100% - 12px), calc(100% - 12px) 100%, 12px 100%, 0 calc(100% - 12px));
+            background-color: rgb(240, 221, 195);
+            padding: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+
+
+        .show {
+            opacity: 1 !important;
+        }
+
+
+        .hide {
+            opacity: 0.2;
+        }
+
+
+
+
+
+        .title-text {
+            font-size: 40px;
+            color: rgb(240, 221, 195);
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        .content-text {
+
+            font-size: 20px;
+            line-height: 1.8;
+        }
+
+        @media only screen and (max-width: 800px) {
+            .committee-grid {
+                padding: 40px 10px !important
+            }
+
+
+            .popup .icon {
+                padding: 15px;
+                height: 58.6px;
+                width: 58.6px;
+                font-size: 32px;
+                clip-path: polygon(0 16.60px, 16.60px 0, calc(100% - 16.60px) 0, 100% 16.60px, 100% calc(100% - 16.60px), calc(100% - 16.60px) 100%, 16.60px 100%, 0 calc(100% - 16.60px));
+            }
+
+            .content {
+                margin-top: 0;
+
+            }
+
+            .footer {
+                margin-top: 40px;
+            }
+
+
+
+            .inner-space,
+            .register {
+                clip-path: none;
+                mask: none !important;
+                -webkit-mask: none !important;
+            }
+
+
+            .x {
+                top: 0px;
+                right: 0px;
+            }
+
+            .popup {
+                padding-top: 30px;
+            }
+
+            .title .inner-space::after {
+                background-size: 800px;
+                filter: brightness(1.2) grayscale(0.8)
+            }
+
+            .title .inner-space {
+                flex-direction: row;
+                gap: 25px
+            }
+
+            .giant-text {
+                font-size: 50px
+            }
+
+            .register {
+                margin-top: 0 !important;
+                margin-bottom: 0 !important;
+            }
+
+            .title-text {
+                font-size: 28px;
+                line-height: 1.2;
+                text-align: left;
+            }
+
+
+
+
+
+            .register {
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+        }
+
+
+
+        .container {
+            height: 100%;
+            width: 100%;
+            flex-direction: column;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .c-item {
+            width: 45%;
+            display: inline-flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            height: 45%;
+            gap: 10px
+        }
+
+        .c-icon {
+            font-size: 36px;
+            padding: 15px;
+
+        }
+
+        .c-icon,
+        .menu span,
+        .register span,
+        .learn-more span,
+        .link span,
+        .x span {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 300,
+                'GRAD' 200,
+                'opsz' 48;
+
+        }
+
+        .link .span {
+            font-style: italic;
+            font-size: 0.8em !important;
+        }
+
+        .link {
+            position: relative;
+            cursor: pointer;
+        }
+
+
+        .link:hover::after {
+
+            background-color: black;
+
+        }
+
+
+        .c-title {
+            font-size: 24px
+        }
+
+        .c-caption {
+            font-size: 16px;
+            text-align: center;
+            margin-top: -5px;
+            width: 120px;
+            height: 37px;
+        }
+
+        .d-item {
+            display: flex;
+            justify-content: space-around;
+            font-size: 20px;
+
+        }
+
+        .d-item div:not(.date) {
+            font-size: 16px;
+        }
+
+        .date {
+            width: 100px;
+        }
+
+        .date+div {
+            width: 250px;
+            text-align: right;
+            line-height: 1.5;
+            margin-top: 0px;
+        }
+
+        .border {
+            height: 2px;
+            width: 100%;
+            background-color: #343;
+            color: transparent;
+            user-select: none;
+        }
+
+
+        .dates {
+            gap: 10px;
+            flex-wrap: nowrap;
+            overflow: scroll;
+            padding-right: 10px;
+            background-repeat: no-repeat;
+            background-size: 100% 50px, calc(100%) 20px;
+            background-attachment: local, scroll;
+            background-position: 0px 0px, 0px -7px
+        }
+
+        .learn-more {
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+        }
+
+
+        .learn-more span {
+            font-size: 16px;
+            padding-left: 4px;
+        }
+
+        .p-item img {
+            height: 120px;
+            border-radius: 50%;
+        }
+
+        .p-item {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .p-item>div {
+            display: flex;
+            flex-direction: column;
+            width: 150px;
+            justify-content: center;
+            gap: 10px;
+        }
+
+
+        /*.register {
+            background-color: rgb(240, 221, 195);
+            height: 100px;
+            padding-left: 60px;
+            width: 100%;
+            text-transform: uppercase;
+            margin: 20px auto 0px;
+            font-size: 20px;
+            align-items: flex-start;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-direction: column;
+            font-style: italic;
+            --mask: radial-gradient(20px at 20px 20px, #0000 98%, #000) -20px -20px;
+            -webkit-mask: var(--mask);
+            mask: var(--mask);
+        }*/
+
+        .register span {
+            padding-left: 6px;
+            font-size: 24px;
+        }
+
+        .date+div {
+            width: 200px;
+        }
+
+        .popup-parent {
+            position: fixed;
+            height: 100vh;
+            width: 100vw;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            z-index: -4;
+            transition: opacity ease 0.4s;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .popup {
+            position: fixed;
+            width: calc(100vw - 40px);
+
+            background: #ddd;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+        }
+
+        .block {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-color: black;
+            opacity: 0.7;
+        }
+
+
+
+        .popup .p-item {
+            width: 100%;
+            align-items: center;
+            height: 120px;
+            justify-content: center;
+            gap: 40px
+        }
+
+        .popup .icon {
+            background-color: transparent;
+            color: black;
+            background-size: 500px;
+            padding: 16px;
+            font-size: 36px;
+            margin: 0;
+            cursor: pointer;
+        }
+
+
+        .footer {
+            padding: 0 20px 40px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            gap: 10px;
+        }
+
+        .footer>div {
+            display: flex;
+            text-align: center;
+        }
+
+        .show-2 {
+            z-index: 1;
+        }
+    </style>
+
+    
+</head>
+
+<body>
+    <div class="outer-wrapper">
+        <div class="banner">
+            <div class="menu-icon">
+                <span class="material-icons-two-tone">menu</span>
+                <span class="material-icons-two-tone">close</span>
+            </div>
+
+
+            <div class="giant-text">NEMUN</div>
+            <div style="font-style: italic;">Held on May 20th - 21st, 2023</div>
+            <div class="menu">
+
+                <a href="./">
+                    <div class="link  thisPage" style="display:flex; align-items: center;">Home
+                    </div>
+                </a>
+                <a href="conference">
+                    <div class="link" style="display:flex; align-items: center;">Conference
+                    </div>
+                </a>
+
+                <a href="about">
+                    <div class="link" style="display:flex; align-items: center;">About
+                    </div>
+                </a>
+                <a href="registration">
+                    <div class="link" style="display:flex; align-items: center;">Registration
+                    </div>
+                </a>
+                <a href="contact">
+                    <div class="link" style="display:flex; align-items: center;">Contact
+                    </div>
+                </a>
+            </div>
+
+
+
+
+
+        </div>
+        <div class="wrapper">
+            <div class="register">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSf_tDw3vhW_73vlFV3y79G_EX4pmVNbt_mjllGc8VsUHZSLnw/viewform?usp=sf_link">
+                    <div style="display: flex; align-items: center; font-style: normal;text-transform: none;" class="link">
+                        Final Registration (ends by March 10th)
+                        <span class="material-icons-two-tone" style="font-size: 19.2px;">arrow_forward_ios</span>
+                    </div>
+                </a>
+                <a href="https://tellonym.me/nemun.2023">
+                    <div style="display: flex; align-items: center; font-style: normal;text-transform: none;" class="link">
+                        Ask us a question on Tellonym
+                        <span class="material-icons-two-tone" style="font-size: 19.2px;">arrow_forward_ios</span>
+                    </div>
+                </a>
+                
+            </div>
+
+
+
+            <div class="group">
+                <div class="title">
+                    <div class="inner-space">
+                        <span class="material-icons-two-tone icon">
+                            gavel
+                        </span>
+                        <span class="title-text">About <br>NEMUN 2023</span>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="inner-space">
+                        <div class="content-text">NEMUN is an annual Model United Nations conference held by the NEHS
+                            MUN club. NEHS has successfully hosted NEMUN, once named EMUN, from 2013-2022. This year
+                            held on May 20 - 21, NEMUN is a brand new start with a bigger dream.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="group inverted">
+                <div class="title">
+                    <div class="inner-space">
+                        <span class="material-icons-two-tone icon">
+                            format_quote
+                        </span>
+                        <span class="title-text">Be a voice, <br>not an echo.</span>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="inner-space">
+                        <div class="content-text">
+                            We are aiming for an innovative and high-quality conference with talented students from all
+                            across the island coming together and contributing to our society with inquisitive minds. We
+                            welcome you to join the conference, and look forward to seeing you at NEMUN 2023!
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="group">
+                <div class="title">
+                    <div class="inner-space">
+                        <span class="material-icons-two-tone icon">
+                            account_balance
+                        </span>
+                        <span class="title-text">Committees</span>
+                    </div>
+                </div>
+                <div class="content" style="min-height: 400px">
+                    <div class="inner-space committee-grid" style="padding: 25px 30px;">
+
+                        <div class="container" style="flex-direction: row;">
+                            <span class="c-item">
+
+                                <span class="material-icons-two-tone c-icon">
+                                    handshake
+                                </span>
+                                <div class="c-title">
+                                    GA1
+                                </div>
+                                <div class="c-caption">General Assembly <br>First Committee</div>
+                            </span>
+                            <span class="c-item">
+                                <span class="material-icons-two-tone c-icon">
+                                    work
+                                </span>
+                                <div class="c-title">
+                                    WTO
+                                </div>
+                                <div class="c-caption">
+                                    World Trade <br>Organization
+                                </div>
+                            </span>
+                            <span class="c-item">
+                                <span class="material-icons-two-tone c-icon">
+                                    timeline
+                                </span>
+                                <div class="c-title">
+                                    UNDP
+                                </div>
+                                <div class="c-caption">
+                                    Development <br>Programme
+                                </div>
+
+                            </span>
+                            <span class="c-item">
+                                <span class="material-icons-two-tone c-icon">
+                                    shield
+                                </span>
+                                <div class="c-title">
+                                    UNSC
+                                </div>
+                                <div class="c-caption">
+                                    Security<br> Council
+                                </div>
+                            </span>
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="group inverted">
+                <div class="title">
+                    <div class="inner-space">
+                        <span class="material-icons-two-tone icon">
+                            person
+                        </span>
+                        <span class="title-text">The Secretariat</span>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="inner-space">
+                        <div class="container"
+                            style="justify-content: flex-start; align-items: center; flex-direction: row; gap: 10px;flex-wrap: wrap;padding-left: 40px">
+                            <div class="p-item">
+                                <div style="min-width: 200px;">
+                                    <div>Secretary<br /> General</div>
+                                    <div style="font-size: 24px">Carina Chang</div>
+                                </div>
+                            </div>
+                            <div class="p-item">
+                                <div style="min-width: 200px;">
+                                    <div>Deputy<br /> Secretary General</div>
+                                    <div style="font-size: 24px">Christine Wu</div>
+                                </div>
+                            </div>
+                            <div class="p-item">
+                                <div style="min-width: 200px;">
+                                    <div>Deputy<br /> Secretary General</div>
+                                    <div style="font-size: 24px">Carina Hsu</div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <a href="about#staff" style="width: fit-content; margin: 0 auto">
+                            <div class="learn-more link">
+                                Learn more <span class="material-icons-two-tone" style="">arrow_forward_ios</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="group">
+                <div class="title">
+                    <div class="inner-space">
+                        <span class="material-icons-two-tone icon">
+                            calendar_today
+                        </span>
+                        <span class="title-text">Important dates</span>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="inner-space" style="padding-right: 30px">
+                        <div class="container dates">
+                            <div class="d-item">
+                                <div class="date">October</div>
+                                <div>Student Officers Recruitment</div>
+                            </div>
+                            <div class="border">a</div>
+                            <div class="d-item">
+                                <div class="date">November</div>
+                                <div>Form 1</div>
+                            </div>
+                            <div class="border">a</div>
+                            <div class="d-item">
+                                <div class="date">December</div>
+                                <div>Student Officers Recruitment Results<br>Early Bird Registration<br>Form 2</div>
+                            </div>
+                            <div class="border">a</div>
+                            <div class="d-item">
+                                <div class="date">January</div>
+                                <div>Early Bird Registration Due
+                                </div>
+                            </div>
+                            <div class="border">a</div>
+                            <div class="d-item">
+                                <div class="date">February</div>
+                                <div>Regular Registration<br>Form 2 Due
+                                </div>
+                            </div>
+                            <div class="border">a</div>
+                            <div class="d-item">
+                                <div class="date">March</div>
+                                <div>Regular Registration Due<br>Payment Due
+                                </div>
+                            </div>
+                            <div class="border">a</div>
+                            <div class="d-item">
+                                <div class="date">April</div>
+                                <div>Chair Report Release<br>Training Conference
+                                </div>
+                            </div>
+                            <div class="border">a</div>
+                            <div class="d-item">
+                                <div class="date">May</div>
+                                <div>20 - 21 &#183; NEMUN <br/>
+                                    27 - 28 &#183; JMUN
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+            </div>
+
+            <div class="register">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSf_tDw3vhW_73vlFV3y79G_EX4pmVNbt_mjllGc8VsUHZSLnw/viewform?usp=sf_link">
+                    <div style="display: flex; align-items: center; font-style: normal;text-transform: none;" class="link">
+                        Final Registration (ends by March 10th)
+                        <span class="material-icons-two-tone" style="font-size: 19.2px;">arrow_forward_ios</span>
+                    </div>
+                </a>
+                
+            </div>
+            <div class="footer" style="margin-top: 40px">
+                <div>
+                    <div>Venue: National Experimental High School at Hsinchu Science Park</div>
+                </div>
+                <div>
+                    <div>Email: nemun2023@gmail.com</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="popup-parent hide">
+        <div class="popup" style="max-width: 600px">
+            <div class="x">
+                <span class="material-icons-two-tone icon">
+                    close
+                </span>
+            </div>
+            <div class="container"
+                style="gap: 20px;padding: 20px;justify-content: flex-start;align-items: flex-start;padding-left: 60px;">
+                <div class="p-item">
+                    <span class="material-icons-two-tone icon">
+                        timer
+                    </span>
+
+                    <div>
+                        <a href="https://forms.gle/nfNgaU7ZHBrZc1Cb6"
+                            style="width: 100%;display: flex;flex-direction:column;gap:10px;align-items: flex-start;">
+
+                            <div class="link" style="font-size: 24px; display: flex;align-items: center;">
+                                <span>Final Registration</span>
+
+                                <span class="material-icons-two-tone" style=" font-size: 20px;">arrow_forward_ios</span>
+                            </div>
+
+
+                            <div>Ends on March 10th</div>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting)
+                    setTimeout(() => entry.target.classList.add("show"), 100);
+                //else
+                //entry.target.classList.remove("show")
+            })
+        })
+        const groups = document.querySelectorAll(".title, .content")
+        groups.forEach(a => a.classList.add("hide"))
+        groups.forEach(a => observer.observe(a))
+
+        /*const popup = document.querySelector('.popup-parent')
+        const register = document.querySelectorAll('.register .link')
+        register.forEach(el => el.onclick = () => {
+
+            popup.classList.toggle("show-2")
+            popup.classList.toggle("show")
+        })*/
+
+        const x = document.querySelectorAll(".x")
+        x.forEach(a => {
+            a.onclick = ({ target }) => {
+                while (!target.classList.contains("popup-parent")) {
+                    target = target.parentElement
+                }
+                target.classList.remove("show");
+                setTimeout(() => target.classList.remove("show-2"), 400)
+            }
+        })
+
+        document.querySelector(".menu-icon").onclick = function () {
+            document.querySelector(".outer-wrapper").classList.toggle("reveal-menu")
+        }
+    </script>
+</body>
